@@ -34,7 +34,7 @@ Route::get('/HomePage', [HomePageController::class, 'indexs'])->name('home.index
 //products
 Route::get('/ProductDetails/{id}', [ProductController::class, 'GetProductDetails'])->name('Product.GetProductDetails');
 //Get All Products and Products By Category Id
-Route::get('/Products/{CatId?}', [ProductController::class, 'GetAllProductCategoryAction'])->name('Product.GetAllProduct');
+Route::get('/Product/{CatId?}', [ProductController::class, 'GetAllProductCategoryAction'])->name('Product.GetAllProduct');
 //Menu route
 Route::get('/Menu', [ProductController::class, 'Menu'])->name('Product.GetMenu');
 
@@ -65,7 +65,7 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin,superadmin'])->group(
 //products Admin route
 Route::get('/Admin/Product', [ProductAdminController::class, 'index'])->name('Admin.GetProduct');
 //Add New Product route
-Route::get('/Products/AddNew', [ProductAdminController::class, 'AddNewProduct'])->name('Admin.AddNewProduct');
+Route::get('/Products/AddNew', [ProductAdminController::class, 'AddNewProduct'])->name('Admins.Product');
 //Save New Product route
 Route::post('/Products/Save', [ProductAdminController::class, 'Save'])->name('Admin.SaveProduct');
 //Edit Product route
@@ -99,7 +99,7 @@ Route::delete('/Offers/Delete/{id}', [OffersAdminController::class, 'DeleteOffer
 
 
 //about Admin route
-Route::get('/Admin/About/GetAll', [AboutAdminController::class, 'index'])->name('Admin.GetAbouts');
+Route::get('/Admin/Abouts/GetAll', [AboutAdminController::class, 'index'])->name('Admin.GetAbouts');
 //Add New About route
 Route::get('/About/AddNew', [AboutAdminController::class, 'AddNewAbout'])->name('Admin.AddNewAbout');
 //Save New About route

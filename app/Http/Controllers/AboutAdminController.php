@@ -46,7 +46,7 @@ class AboutAdminController extends Controller
                 $CurrentAbout->image_name = $imagePath;
             }
             $CurrentAbout->Save();
-            return redirect()->route('Admin.GetAbout')->with('success', 'About Updated Successfully!');
+            return redirect()->route('Admin.GetAbouts')->with('success', 'About Updated Successfully!');
         }
 
         //Save About State
@@ -72,7 +72,7 @@ class AboutAdminController extends Controller
             $NewAbout->image_name = $imagePath;
             $NewAbout->save();
 
-            return redirect()->route('Admin.GetAbout')->with('success', 'About added successfully!');
+            return redirect()->route('Admin.GetAbouts')->with('success', 'About added successfully!');
             //dd($Result);
         }
     }
@@ -88,6 +88,6 @@ class AboutAdminController extends Controller
     {
         $About = About::findOrFail($id);
         $About->delete();
-        return redirect()->route(route:'Admin.GetAbout',parameters:$id)->with('success', 'About Deleted Successfully!');   
+        return redirect()->route(route:'Admin.GetAbouts',parameters:$id)->with('success', 'About Deleted Successfully!');   
     }
 }

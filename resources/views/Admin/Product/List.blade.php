@@ -18,7 +18,7 @@
 @section('Content')
     <div class="container mt-4">
         <div class="left-center">
-            <a href="{{ route('Admin.AddNewProduct') }}" class="btn btn-secondary">Add New Product </a>
+            <a href="{{ route('Admins.Product') }}" class="btn btn-secondary">Add New Product </a>
         </div>
         <table id="myTable" class="display table table-striped table-bordered" style="width:100%">
             <thead>
