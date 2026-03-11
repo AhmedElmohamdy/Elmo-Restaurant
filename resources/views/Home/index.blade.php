@@ -160,6 +160,8 @@
         <div class="container">
             <div class="heading_container">
                 <h2>Book A Table</h2>
+                <p>Reserve your table in just a few seconds.</p>
+                <p>Check Your Email for Confirmation</p>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -181,9 +183,10 @@
                                 @endif
                             </div>
                             <div>
-                                <input type="email" name="email" id="email" class="form-control"
-                                    placeholder="Your Email" required />
-                                @if ($errors->has('email'))
+                               <input type="email" name="email" class="form-control"
+                                        pattern=".+@gmail\.com"
+                                        placeholder="Your Gmail Address" required>
+                                     @if ($errors->has('email'))
                                     <span style="color: red;">{{ $errors->first('email') }}</span>
                                 @endif
                             </div>

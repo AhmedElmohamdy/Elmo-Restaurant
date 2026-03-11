@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class AdminNotification extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['type', 'message', 'is_read', 'url'];
+    protected $table = 'admin_notification';
+}

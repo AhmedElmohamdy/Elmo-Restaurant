@@ -9,6 +9,7 @@ class Book extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'user_id',
         'name',
         'phoneNumber',
         'email',
@@ -16,6 +17,8 @@ class Book extends Model
         'date',
         'booking_time',
     ];
-
-   
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class);
+    }
 }
