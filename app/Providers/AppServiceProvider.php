@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('setting', Setting::first());
         });
 
-        // Admin Notifications — only on Admin views
+        // Admin Notifications
         View::composer('*', function ($view) {
             $view->with('notifications', AdminNotification::orderBy('created_at', 'desc')->take(5)->get());
             $view->with('notifCount',    AdminNotification::where('is_read', false)->count());
